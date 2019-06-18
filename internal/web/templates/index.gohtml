@@ -1,0 +1,21 @@
+{{define "title"}}Index{{end}}
+{{define "content"}}
+
+<div class="row">
+<form method="post" action="/api/index">
+  <div class="input-field col s6">
+    <input placeholder="URL" name="url" id="url" type="text" >
+
+
+    <input type="submit" name="submit" class="btn" value="Index"/>
+    <input type="submit" name="reset" class="btn" value="Clear"/>
+  </div>
+</form>
+</div>
+
+<div class="row">
+  Indexed {{.Pages}} Pages and {{.Words}} words.
+</div>
+
+
+{{end}}

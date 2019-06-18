@@ -1,0 +1,24 @@
+{{define "title"}}Search{{end}}
+{{define "content"}}
+
+<div class="row">
+<form method="get">
+  <input name="q" value="{{.Term}}" />
+  <button class="btn">Search</button>
+</form>
+</div>
+
+<div class="row">
+Found {{.Results | len }} results {{if .Term}} for {{.Term}} {{end}}
+</div>
+{{range .Results}}
+<div class="row">
+  <a href="{{.Page.URL}}"/>{{.Page.Title}}</a>
+  <br/>
+  Occurrences: {{.Count}}
+</div>
+
+{{end}}
+
+
+{{end}}
